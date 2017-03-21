@@ -12,8 +12,9 @@ likely change the y-axis of the chart to fit your city's temperature range.
 I also use a custom matplotlib style as the basis for these charts, which you
 can find here: https://gist.githubusercontent.com/rhiever/d0a7332fe0beebfdc3d5/raw/223d70799b48131d5ce2723cd5784f39d7a3a653/tableau10.mplstyle
 '''
-
-weather_data = pd.read_csv('KPHL.csv', parse_dates=['date'])
+station, plttitle,figtitle = 'KPHL.csv','Philadelphia, PA\'s weather, July 2014 - June 2015\n\n','philadelphia-weather-july14-june15.png'
+station, plttitle, figtitle = 'KVES.csv','Richmond, IN\'s weather, July 2014 - June 2015\n\n','richmond-weather-july14-june15.png'
+weather_data = pd.read_csv(station, parse_dates=['date'])
 print(weather_data.describe())
 
 # Generate a bunch of histograms of the data to make sure that all of the data
@@ -101,6 +102,6 @@ with plt.style.context('https://gist.githubusercontent.com/rhiever/d0a7332fe0bee
     plt.ylim(-15, 111)
     plt.grid(False)
 
-    plt.title('Philadelphia, PA\'s weather, July 2014 - June 2015\n\n', fontsize=20)
+    plt.title(plttitle, fontsize=20)
 
-    plt.savefig('philadelphia-weather-july14-june15.png')
+    plt.savefig(figtitle)

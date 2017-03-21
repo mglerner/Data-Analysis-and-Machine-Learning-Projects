@@ -48,6 +48,9 @@ def scrape_station(station):
 
 
 # Scrape the stations used in this article
-for station in ['KCLT', 'KCQT', 'KHOU', 'KIND', 'KJAX',
-                'KMDW', 'KNYC', 'KPHL', 'KPHX', 'KSEA']:
+stations = ['KCLT', 'KCQT', 'KHOU', 'KIND', 'KJAX',
+            'KMDW', 'KNYC', 'KPHL', 'KPHX', 'KSEA']
+stations = ['KVES',]
+
+for station in stations:
     scrape_station(station)
